@@ -1,47 +1,42 @@
-/* const cityName = document.querySelector('.cityName')
-const searchButton = document.querySelector('.searchButton');
-searchButton.addEventListener('click', () => {
-  getData(cityName.value)
-  
+const inputName = document.querySelector('.cityName');
+const searchButton = document.querySelector('.searchButton')
+const weatherIcon = document.querySelector('.weather-img');
+searchButton.addEventListener('click', ()=>{
+  getData(inputName.value)
 })
 
- async function getData(city){
-  const apiKey= 'c2a1ace036c0ffde1bfc93eb1e23ca2d' ;
-  const mainUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-  const responseWeather= await fetch(mainUrl);
-  const weatherData = await responseWeather.json();
-  console.log(weatherData)
-  const weather = weatherData.weather[0].main;
-  const weatherTemp = weatherData.main.temp;
-  const weatherHum= weatherData.main.humidity;
-  switch (weather) {
-    case 'Clear'
-        
-  } 
-  document.querySelector('.weather').innerHTML = `${city} , ${weather} Temperature:${weatherTemp} Humidty:${weatherHum}`;
-} */
+
+async function getData(nameCity) {
+  myApi= "0a4795a2f5822b54408050d83f88aa50"
+  url =`https://api.openweathermap.org/data/2.5/weather?q=${nameCity}&appid=${myApi}&units=metric`
+  const data = await fetch(url)
+  const cityWeather = await data.json()
+  console.log(cityWeather)
+  const temperature = cityWeather.main.temp;
+  const humidty = cityWeather.main.humidity;
+  const mainWeather = cityWeather.weather[0].main
 
 
-async function Time1(){
-  await setTimeout(()=>{
-    console.log('1')
-  },1000)
-}
+  if(mainWeather === "Clouds"){
+    weatherIcon.src = "images/cloud.png"
 
+  }else if(mainWeather === "Clear"){
+    weatherIcon.src = "images/clear.png"
+  }else if(mainWeather === "Rain"){
+    weatherIcon.src = "images/rain.png"
+  }else if(mainWeather === "Drizzle"){
+    weatherIcon.src = "images/drizzle.png"
+  }else if(mainWeather === "Mist"){
+    weatherIcon.src = "images/mist.png"
+  }
 
+  let nameCityx=nameCity.toUpperCase()
+
+  document.querySelector('.temperature').innerHTML = `${temperature} &#8451;`
+  document.querySelector('.temp-hum').innerHTML = `${humidty}`
+  document.querySelector('.city').innerHTML = `${nameCityx}`
   
- async function Time2(){
-   await setTimeout(()=>{
-     console.log('2')
-  },500)
+  
 }
-
-
-Time1();
-Time2();
-
-
-
-
 
 
