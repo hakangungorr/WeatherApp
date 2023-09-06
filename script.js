@@ -15,10 +15,11 @@ async function getData(nameCity) {
   const temperature = cityWeather.main.temp;
   const humidty = cityWeather.main.humidity;
   const mainWeather = cityWeather.weather[0].main
+  console.log(mainWeather)
 
 
   if(mainWeather === "Clouds"){
-    weatherIcon.src = "images/cloud.png"
+    weatherIcon.src = "images/clouds.png"
 
   }else if(mainWeather === "Clear"){
     weatherIcon.src = "images/clear.png"
