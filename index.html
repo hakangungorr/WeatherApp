@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <div class="card">
@@ -19,27 +23,43 @@
         <input class="cityName" placeholder="Enter city name">
         <button class="searchButton">Search</button>
       </div>
-      <div class="weather">
-        <img class="weather-img" src="">
-        <p class="temperature"></p>
-        <p class="city"></p>
+      <div class="error">
+        <img class="err-img"src="">
+        <p>City could not found</p>
       </div>
-      <div class="info-container">
+      <div class= "display-weather">
+        <img class="weather-img" src="">
+        <div class="weather">
+          <h1 class="temperature"></h1>
+          <p class="description"></p>
+          <p class="city"><i class="fa-solid fa-location-dot"></i></p>
+        </div>
+        <div class="info-container">
         <div class="flex"> 
           <img class="imgg" src="images/wind.png">
-          <p class="temp-wind"></p>
-        </div>
-        <div class="flex">
-          <img class="imgg" src="images/humidity.png">
-          <p class="temp-hum"></p>
-        </div>
-          
-        </div>
+          <div>
+            <p class="weather-wind"></p>
+            <p>Wind Speed</p>
+          </div>
+          </div>
+          <div class="flex">
+            <img class="imgg" src="images/humidity.png">
+            <div>
+              <p class="weather-hum"></p>
+              <p>humidity</p>
+  
+  
+            </div>
+          </div>
+            
+          </div>
+         </div>
+      
       
       </div>
 
-    </div>
+    
 
-    <script src="script.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
